@@ -1,8 +1,6 @@
-.INTERMEDIATE: caop_c_d.geojsons caop_c_m.geojsons caop_c_f.geojsons rgg.geojsons caop_c_d.pmtiles caop_c_m.pmtiles caop_c_f.pmtiles
-
-ARGS_caop_c_d = -Z6 -z9
-ARGS_caop_c_m = -Z10 -z11
-ARGS_caop_c_f = -Z12 -z13
+ARGS_Cont_Dist_CAOP2023 = -Z6 -z9
+ARGS_Cont_Mun_CAOP2023 = -Z10 -z11
+ARGS_Cont_Freg_CAOP2023 = -Z12 -z13
 ARGS_rgg = -Z14 -z16 -y area_m2
 ARGS_cad = -Z14 -z16 -y nationalcadastralreference -y areavalue -y administrativeunit
 
@@ -16,16 +14,10 @@ rgg.geojsons: rgg.gpkg
 	ogr2ogr $@ $<
 
 cad.geojsons:
-	ogr2ogr $@ https://dados.gov.pt/pt/datasets/r/df27e945-2f01-4723-97e6-018511a5bdc5
+	ogr2ogr $@ WFS:https://snicws.dgterritorio.gov.pt/geoserver/inspire/ows?service=WFS&request=GetCapabilities&version=2.0.0
 
-caop_c_d.geojsons: caop_c.gpkg
-	ogr2ogr $@ $< Cont_Dist_CAOP2023
-
-caop_c_m.geojsons: caop_c.gpkg
-	ogr2ogr $@ $< Cont_Mun_CAOP2023
-
-caop_c_f.geojsons: caop_c.gpkg
-	ogr2ogr $@ $< Cont_Freg_CAOP2023
+Cont_%.geojsons: caop_c.gpkg
+	ogr2ogr $@ $< Cont_$*
 
 rgg.gpkg:
 	wget https://dados.gov.pt/pt/datasets/r/8dedcd3e-ba46-4f0f-a75f-36e0b327fc56 -O $@
