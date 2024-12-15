@@ -9,7 +9,7 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key={key}"
+      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key=ooqejA626KL0Wf9prmB2"
     },
     "natural_earth_shaded_relief": {
       "maxzoom": 6,
@@ -21,10 +21,7 @@
     },
     "cadastro": {
       "type": "vector",
-      "tiles": ["http://localhost:8080/mapa/{z}/{x}/{y}"],
-      "minzoom": 6,
-      "maxzoom": 16,
-      "scheme": "xyz"
+      "url": "pmtiles://https://pub-b46c20d968e94cb99d1bf4c4b8b89400.r2.dev/mapa.pmtiles"
     }
   },
   "sprite": "https://maputnik.github.io/osm-liberty/sprites/osm-liberty",
@@ -1749,7 +1746,7 @@
       "id": "cadastro-fill",
       "type": "fill",
       "source": "cadastro",
-      "source-layer": "cadastro",
+      "source-layer": "cad",
       "minzoom": 14,
       "paint": {
         "fill-color": "rgba(167, 205, 255, 1)",
@@ -1761,7 +1758,7 @@
       "id": "cadastro-line",
       "type": "line",
       "source": "cadastro",
-      "source-layer": "cadastro",
+      "source-layer": "cad",
       "minzoom": 14,
       "layout": {"visibility": "visible"},
       "paint": {
@@ -1799,7 +1796,7 @@
       "id": "distritos",
       "type": "line",
       "source": "cadastro",
-      "source-layer": "caop_cont_dist",
+      "source-layer": "Cont_Dist_CAOP2023",
       "minzoom": 6,
       "maxzoom": 10
     },
@@ -1807,7 +1804,7 @@
       "id": "municipios",
       "type": "line",
       "source": "cadastro",
-      "source-layer": "caop_cont_mun",
+      "source-layer": "Cont_Mun_CAOP2023",
       "minzoom": 10,
       "maxzoom": 12
     },
@@ -1815,7 +1812,7 @@
       "id": "freguesias",
       "type": "line",
       "source": "cadastro",
-      "source-layer": "caop_cont_freg",
+      "source-layer": "Cont_Freg_CAOP2023",
       "minzoom": 12,
       "maxzoom": 14
     }
