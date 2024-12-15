@@ -5,9 +5,8 @@ ARGS_caop_c_m = -Z10 -z11
 ARGS_caop_c_f = -Z12 -z13
 ARGS_rgg = -Z14 -z16 -y area_m2
 ARGS_cad = -Z14 -z16 -y nationalcadastralreference -y areavalue -y administrativeunit
-DEPS := $(patsubst ARGS_%, %.pmtiles, $(filter ARGS_%, $(.VARIABLES)))
 
-mapa.pmtiles: $(DEPS)
+mapa.pmtiles: $(patsubst ARGS_%, %.pmtiles, $(filter ARGS_%, $(.VARIABLES)))
 	tile-join -o $@ $^
 
 %.pmtiles: %.geojsons
@@ -32,4 +31,4 @@ rgg.gpkg:
 	wget https://dados.gov.pt/pt/datasets/r/8dedcd3e-ba46-4f0f-a75f-36e0b327fc56 -O $@
 
 caop_c.gpkg:
-	wget -qO- https://geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2023-gpkg.zip | funzip > $@
+	wget -qO- https://dados.gov.pt/pt/datasets/r/5c541c6e-e27b-44d9-a7a0-962c9a8b4b94 | funzip > $@
