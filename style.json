@@ -6,6 +6,7 @@
     "maputnik:renderer": "mbgljs",
     "openmaptiles:version": "3.x"
   },
+  "terrain": {"source": "terrain_source"},
   "sources": {
     "openmaptiles": {
       "type": "vector",
@@ -22,6 +23,26 @@
     "cadastro": {
       "type": "vector",
       "url": "pmtiles://https://pub-b46c20d968e94cb99d1bf4c4b8b89400.r2.dev/mapa.pmtiles"
+    },
+    "terrain_source": {
+      "type": "raster-dem",
+      "tiles": [
+        "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
+      ],
+      "minzoom": 0,
+      "maxzoom": 13,
+      "tileSize": 256,
+      "encoding": "terrarium"
+    },
+    "hillshade_source": {
+      "type": "raster-dem",
+      "tiles": [
+        "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
+      ],
+      "minzoom": 0,
+      "maxzoom": 13,
+      "tileSize": 256,
+      "encoding": "terrarium"
     }
   },
   "sprite": "https://maputnik.github.io/osm-liberty/sprites/osm-liberty",
@@ -1815,7 +1836,8 @@
       "source-layer": "Cont_Freg_CAOP2023",
       "minzoom": 12,
       "maxzoom": 14
-    }
+    },
+    {"id": "hillshade", "type": "hillshade", "source": "hillshade_source"}
   ],
   "id": "osm-liberty"
 }
