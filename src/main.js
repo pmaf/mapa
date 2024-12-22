@@ -18,4 +18,18 @@ const mapOpts = {
 }
 
 const map = new maplibregl.Map(mapOpts)
-map.addControl(new maplibregl.NavigationControl());
+
+map.addControl(
+  new maplibregl.NavigationControl({
+      visualizePitch: true,
+      showZoom: true,
+      showCompass: true
+  })
+);
+
+map.addControl(
+  new maplibregl.TerrainControl({
+      source: 'terrain_source',
+      exaggeration: 1
+  })
+);
