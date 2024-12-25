@@ -2,7 +2,7 @@
 
 https://pmaf.github.io/mapa
 
-<img src="mapa.png" alt="drawing" width="600" position="center"/>
+<img src="mapa.png" alt="drawing" width="600"/>
 
 ## 📝 Description
 Cadastral map of Portugal using government open data sources.\
