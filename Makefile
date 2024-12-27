@@ -9,11 +9,17 @@ mapa.pmtiles: $(patsubst TC_%, %.pmtiles, $(filter TC_%, $(.VARIABLES)))
 %.pmtiles: %.geojsons
 	tippecanoe -X $(TC_$*) -pn -pS -ah -l $* -o $@ $<
 
-%.geojsons: %.gpkg; ogr2ogr $@ $<
+%.geojsons: %.gpkg
+	ogr2ogr $@ $<
 
 cc_%.geojsons: caop_c.gpkg
 	ogr2ogr $@ $< Cont_$*_CAOP2023
 
-caop_c.gpkg:; wget -qO- geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2023-gpkg.zip | funzip > $@
-rgg.gpkg:; wget dados.gov.pt/pt/datasets/r/8dedcd3e-ba46-4f0f-a75f-36e0b327fc56 -O $@
-cad.gpkg:; ogr2ogr $@ WFS:'https://snicws.dgterritorio.gov.pt/geoserver/inspire/ows?service=WFS&request=GetCapabilities&version=2.0.0'
+caop_c.gpkg:
+	wget -qO- geo2.dgterritorio.gov.pt/caop/CAOP_Continente_2023-gpkg.zip | funzip > $@
+
+rgg.gpkg:
+	wget dados.gov.pt/pt/datasets/r/8dedcd3e-ba46-4f0f-a75f-36e0b327fc56 -O $@
+
+cad.gpkg:
+	ogr2ogr $@ WFS:'https://snicws.dgterritorio.gov.pt/geoserver/inspire/ows?service=WFS&request=GetCapabilities&version=2.0.0'
