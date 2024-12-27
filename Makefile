@@ -1,5 +1,4 @@
-TC_cc_Dist = -Z6 -z9
-TC_cc_Mun = -Z10 -z11
+TC_cc_Mun = -Z7 -z11
 TC_cc_Freg = -Z12 -z13
 TC_rgg = -Z14 -z15 -D11 -d13 -y area_m2
 TC_cad = -Z14 -z15 -D11 -d13 -y nationalcadastralreference -y areavalue -y administrativeunit
