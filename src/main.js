@@ -1,7 +1,7 @@
 import './style.css'
 import maplibregl from 'maplibre-gl'
 import '../node_modules/maplibre-gl/dist/maplibre-gl.css'
-import style from '../style.json'
+import style from '../style-satellite.json'
 import { Protocol } from "pmtiles";
 
 let protocol = new Protocol();
