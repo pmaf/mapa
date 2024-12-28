@@ -14,7 +14,8 @@ const mapOpts = {
   center: [-8.23, 39.65],
   minZoom: 6,
   pitch: 0,
-  bearing: 0
+  bearing: 0,
+  maxPitch: 85
 }
 
 const map = new maplibregl.Map(mapOpts)
