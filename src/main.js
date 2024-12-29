@@ -35,4 +35,20 @@ map.addControl(
   })
 );
 
-map.addControl(new maplibregl.ScaleControl({ maxWidth: 80, unit: 'metric' }), 'bottom-left');
+map.addControl(
+  new maplibregl.ScaleControl({
+    maxWidth: 80,
+    unit: 'metric'
+  }),
+  'bottom-left'
+);
+
+map.addControl(
+  new maplibregl.GeolocateControl({
+		positionOptions: {
+      enableHighAccuracy: true
+    },
+		trackUserLocation: true
+  }),
+  'top-right'
+);
