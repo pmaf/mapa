@@ -34,3 +34,5 @@ map.addControl(
       exaggeration: 1
   })
 );
+
+map.addControl(new ScaleControl({ maxWidth: 80, unit: 'metric' }), 'bottom-left');
