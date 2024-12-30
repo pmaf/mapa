@@ -15,7 +15,7 @@ const mapOpts = {
   minZoom: 6,
   pitch: 0,
   bearing: 0,
-  maxPitch: 85
+  maxPitch: 75
 }
 
 const map = new maplibregl.Map(mapOpts)
@@ -51,4 +51,10 @@ map.addControl(
 		trackUserLocation: true
   }),
   'top-right'
+);
+
+map.addControl(
+  new maplibregl.AttributionControl({
+    compact: true
+  })
 );
