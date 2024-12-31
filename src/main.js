@@ -15,7 +15,8 @@ const mapOpts = {
   minZoom: 6,
   pitch: 0,
   bearing: 0,
-  maxPitch: 75
+  maxPitch: 75,
+  hash: true
 }
 
 const map = new maplibregl.Map(mapOpts)
