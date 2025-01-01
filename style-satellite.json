@@ -1,10 +1,6 @@
 {
     "version": 8,
     "name": "Cadastro - fotografias aereas",
-    "terrain": {
-        "source": "terrain_source",
-        "exaggeration": 1
-    },
     "sources": {
         "openmaptiles": {
             "type": "vector",
@@ -14,14 +10,14 @@
             "type": "vector",
             "url": "pmtiles://https://pub-b46c20d968e94cb99d1bf4c4b8b89400.r2.dev/mapa.pmtiles"
         },
-        "ortoSentinel2": {
+        "ortoLowRes": {
             "type": "raster",
             "tiles": [
-                "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2023_3857/default/g/{z}/{y}/{x}.jpg"
+                "https://data.geopf.fr/tms/1.0.0/ORTHOIMAGERY.ORTHOPHOTOS/{z}/{x}/{y}.jpeg"
             ],
             "tileSize": 256,
             "maxzoom": 12,
-            "attribution": "Terrain © <a href='https://maps.eox.at/'>EOX</a> (<a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors and <a href='https://maps.eox.at/#data'>others</a>)"
+            "attribution": "Aerial images © <a href='https://geoservices.ign.fr'>IGN</a>"
         },
         "ortoSat2023": {
             "type": "raster",
@@ -31,61 +27,23 @@
             "tileSize": 256,
             "minzoom": 12,
             "maxzoom": 19,
-            "attribution": "OrtoSat2023 - Informação geográfica cedida pela Direção-Geral do Território"
-        },
-        "terrain_source": {
-            "type": "raster-dem",
-            "tiles": [
-                "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
-            ],
-            "minzoom": 0,
-            "maxzoom": 13,
-            "tileSize": 256,
-            "encoding": "terrarium"
-        },
-        "hillshade_source": {
-            "type": "raster-dem",
-            "tiles": [
-                "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
-            ],
-            "minzoom": 0,
-            "maxzoom": 13,
-            "tileSize": 256,
-            "encoding": "terrarium"
+            "attribution": "OrtoSat2023 - Informação geográfica cedida pela <a href='https://www.dgterritorio.gov.pt/'>Direção-Geral do Território</a>"
         }
     },
     "sprite": "https://tiles.openfreemap.org/sprites/ofm_f384/ofm",
     "glyphs": "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
     "layers": [
         {
-            "id": "ortoSentinel2",
+            "id": "ortoLowRes",
             "type": "raster",
-            "source": "ortoSentinel2",
-            "maxzoom": 12,
-            "layout": {
-                "visibility": "visible"
-            }
+            "source": "ortoLowRes",
+            "maxzoom": 11
         },
         {
             "id": "ortoSat2023",
             "type": "raster",
             "source": "ortoSat2023",
-            "minzoom": 12,
-            "paint": {
-                "raster-resampling": "linear"
-            }
-        },
-        {
-            "id": "hillshade",
-            "type": "hillshade",
-            "source": "hillshade_source",
-            "layout": {
-                "visibility": "visible"
-            },
-            "paint": {
-                "hillshade-illumination-anchor": "viewport",
-                "hillshade-exaggeration": 0.3
-            }
+            "minzoom": 11
         },
         {
             "id": "cad",

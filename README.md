@@ -12,7 +12,7 @@ For the satellite imagery we use [OrtoSat2023](https://snig.dgterritorio.gov.pt/
 
 ## 🚀 Features
 ✅ See both RGG and Cadastro Predial\
-✅ 3D terrain\
+🔜 3D terrain\
 🔜 Ruler for parcel measurements\
 🔜 Parcel information (area, identifier, etc.)\
 (More?)
