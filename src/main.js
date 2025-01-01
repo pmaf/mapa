@@ -30,13 +30,6 @@ map.addControl(
 );
 
 map.addControl(
-  new maplibregl.TerrainControl({
-      source: 'terrain_source',
-      exaggeration: 1
-  })
-);
-
-map.addControl(
   new maplibregl.ScaleControl({
     maxWidth: 80,
     unit: 'metric'
