@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "maplibre-gl": "^5.0.1",
-    "pmtiles": "^4.1.0"
+    "pmtiles": "^4.2.1"
   }
 }
